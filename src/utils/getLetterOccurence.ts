@@ -17,3 +17,18 @@ export function getLetterOccurence(inputString: string, letterIndex: number): nu
 const answer = getLetterOccurence("LULLS",4);
 
 console.log(answer);
+
+/**
+ * function: getLetterOccurence
+ *  inputs:
+ *      - inputString (string) LULLS
+ *      - letterIndex (number) 0
+ *  return:
+ *      - occurenceNumber (number) 1
+ *
+ *  split INPUTSTRING into its individual letters
+ *  set LETTER to INPUTSTRING[INDEX]
+ *  get the indexes where LETTER appears in INPUTSTRING
+ *  set OCCURENCE to find the index of INDEXES where it equals LETTERINDEX
+ *  return OCCURENCE + 1
+ */
