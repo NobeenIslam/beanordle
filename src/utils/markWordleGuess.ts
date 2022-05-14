@@ -4,7 +4,7 @@ import { getLetterOccurence } from "./getLetterOccurence";
 
 export type Mark = "miss" | "partial" | "fullMatch";
 
-export default function markWordleGuess(
+export function markWordleGuess(
   guess: string,
   hiddenTarget: string
 ): Mark[] {
