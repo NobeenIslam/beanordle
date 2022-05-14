@@ -1,45 +1,40 @@
-
 import { getLetterOccurence } from "./getLetterOccurence";
 
+export interface MarkedGuess {
+  guess: string;
+  result: Mark[];
+}
 
- export interface MarkedGuess {
-    guess: string;
-    result: Mark[];
-  }
-  
-  export type Mark = 0 | 1 | 2;
-  
-  export default function markWordleGuess(
-    guess: string,
-    hiddenTarget: string
-  ): MarkedGuess {
-    const result: Mark[] = [0, 0, 0, 0, 0];
-  
-    for (let index = 0; index < guess.length; index++) {
-      const letter = guess[index];
-      const occurencesInTarget: number = hiddenTarget
-        .split("")
-        .filter((x) => x === letter).length;
-      const guessOccurenceNumber: number = getLetterOccurence(guess, index);
-  
-      if (guessOccurenceNumber <= occurencesInTarget) {
-        if (letter === hiddenTarget[index]) {
-          result[index] = 2;
-        } else {
-          result[index] = 1;
-        }
+export type Mark = 0 | 1 | 2;
+
+export default function markWordleGuess(
+  guess: string,
+  hiddenTarget: string
+): MarkedGuess {
+  const result: Mark[] = [0, 0, 0, 0, 0];
+
+  for (let index = 0; index < guess.length; index++) {
+    const letter = guess[index];
+    const occurencesInTarget: number = hiddenTarget
+      .split("")
+      .filter((x) => x === letter).length;
+    const guessOccurenceNumber: number = getLetterOccurence(guess, index);
+
+    if (guessOccurenceNumber <= occurencesInTarget) {
+      if (letter === hiddenTarget[index]) {
+        result[index] = 2;
+      } else {
+        result[index] = 1;
       }
     }
-  
-    const markedGuess: MarkedGuess = {
-      guess: guess,
-      result: result,
-    };
-    return markedGuess;
   }
-  
 
-
+  const markedGuess: MarkedGuess = {
+    guess: guess,
+    result: result,
+  };
+  return markedGuess;
+}
 
 /**
  * PSEUDOCODE
@@ -70,4 +65,3 @@ import { getLetterOccurence } from "./getLetterOccurence";
  *
  *
  */
-
