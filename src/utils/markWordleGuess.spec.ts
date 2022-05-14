@@ -1,7 +1,7 @@
 import markwordleguess, { Mark } from "./markWordleGuess";
 import { MarkedGuess } from "./markWordleGuess";
 
-xtest("returns expected wordle mark", () => {
+test("returns expected wordle mark", () => {
   expect(markwordleguess("WORLD", "WORDS")).toStrictEqual({
     guess: "WORLD",
     result: [2, 2, 2, 0, 1],
