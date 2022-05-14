@@ -11,6 +11,18 @@
   background-color: white;
 }
 
+.miss{
+  background-color: grey;
+}
+
+.partial{
+  background-color: orange;
+}
+
+.fullMatch{
+  background-color: green ;
+}
+
 .grid-container {
     display: grid;
     border: 1px black;
