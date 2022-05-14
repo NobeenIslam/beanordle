@@ -1,17 +1,19 @@
-
-export function replaceOneElementOfArray(prevArray:string[],indexToReplace:number, substittute:string){
-    for (const index in prevArray){
-        if(parseInt(index) === indexToReplace){
-            prevArray[index] = substittute
-        }
+export function replaceOneElementOfArray(
+  prevArray: string[],
+  indexToReplace: number,
+  substittute: string
+): string[] {
+  for (const index in prevArray) {
+    if (parseInt(index) === indexToReplace) {
+      prevArray[index] = substittute;
     }
-    const newArray = [...prevArray]
-    
-     return newArray
- }
- 
- 
- /* 
+  }
+  const newArray = [...prevArray];
+
+  return newArray;
+}
+
+/* 
  function replaceOneElement()
      inputs prevArray, indexToReplace
      return newArray
