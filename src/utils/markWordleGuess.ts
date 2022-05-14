@@ -1,16 +1,13 @@
 import { getLetterOccurence } from "./getLetterOccurence";
 
-export interface MarkedGuess {
-  guess: string;
-  result: Mark[];
-}
+
 
 export type Mark = "miss" | "partial" | "fullMatch";
 
 export default function markWordleGuess(
   guess: string,
   hiddenTarget: string
-): MarkedGuess {
+): Mark[] {
   const result: Mark[] = ["miss", "miss", "miss", "miss", "miss"];
 
   for (let index = 0; index < guess.length; index++) {
@@ -29,11 +26,8 @@ export default function markWordleGuess(
     }
   }
 
-  const markedGuess: MarkedGuess = {
-    guess: guess,
-    result: result,
-  };
-  return markedGuess;
+ 
+  return result;
 }
 
 /**
