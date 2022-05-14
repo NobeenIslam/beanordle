@@ -7,16 +7,12 @@ export function Grid(): JSX.Element {
   const [guessArray, setGuess] = useState<string[]>(["", "", "", "", ""]);
   const [guessCounter, setGuessCounter] = useState<number>(1);
 
-  useEffect(()=>{
-    const markedGuess = markWordleGuess(guessArray[0],"LEVEL")
-    console.log(markedGuess)
+  useEffect(() => {
+    const markedGuess = markWordleGuess(guessArray[0], "LEVEL");
+    console.log(markedGuess);
     console.log(`Now on guess ${guessCounter}`);
     console.log(guessArray);
-
-  }
-  ,[guessCounter])
-
-
+  }, [guessCounter]);
 
   function onEnterPress(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.code === "Enter") {
