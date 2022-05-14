@@ -1,11 +1,11 @@
 export function replaceOneElementOfArray(
   prevArray: string[],
   indexToReplace: number,
-  substittute: string
+  substitute: string
 ): string[] {
   for (const index in prevArray) {
     if (parseInt(index) === indexToReplace) {
-      prevArray[index] = substittute;
+      prevArray[index] = substitute;
     }
   }
   const newArray = [...prevArray];
