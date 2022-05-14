@@ -1,3 +1,16 @@
+.header{
+  text-align: center;
+}
+
+.gridSection{
+  text-align: center;
+}
+
+.guessInput{
+  margin-bottom: 10px;
+  background-color: white;
+}
+
 .grid-container {
     display: grid;
     border: 1px black;
@@ -32,7 +45,7 @@
   .grid-container > div > span{
     width:100%;
     grid-area: 1/ 1 /2 /2 ;
-    /* So container and item occupy same space in the "new grid"*/
+    /* So container and text item occupy same space in the "new grid"*/
 
 
   }

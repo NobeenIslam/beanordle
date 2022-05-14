@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import markWordleGuess from "../utils/markWordleGuess";
 import { replaceOneElementOfArray } from "../utils/replaceOneElementOfArray";
 import { Guess } from "./Guess";
 
 export function Grid(): JSX.Element {
   const [guessArray, setGuess] = useState<string[]>(["", "", "", "", ""]);
   const [guessCounter, setGuessCounter] = useState<number>(1);
-  console.log(`Now on guess ${guessCounter}`);
+
+  useEffect(()=>{
+    const markedGuess = markWordleGuess(guessArray[0],"LEVEL")
+    console.log(markedGuess)
+    console.log(`Now on guess ${guessCounter}`);
+    console.log(guessArray);
+
+  }
+  ,[guessCounter])
+
+
 
   function onEnterPress(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.code === "Enter") {
@@ -14,10 +25,10 @@ export function Grid(): JSX.Element {
     }
   }
 
-  console.log(guessCounter, guessArray);
   return (
-    <section>
+    <section className="gridSection">
       <input
+        className="guessInput"
         placeholder="Put your guess here"
         value={guessArray[guessCounter - 1]}
         onChange={(e) =>
@@ -49,9 +60,13 @@ when he submits the guess with an enter press
     clear the input bar, but don't clear the first row.
     input should now modifify for the second fuess
 
-function
+//HOW TO GET DIFFERENT GUESSES SHOWING UP AFTER SUBMIT
     for the guess number that we are on
     set assign even.target.value to that index of the array
 
 
+///HOW to get algorithm to colour
+    after submit of the guess with the enter
+    markWordleGuess
+    Use result to colour frames
 */
