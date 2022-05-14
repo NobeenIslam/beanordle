@@ -4,15 +4,15 @@ import { MarkedGuess } from "./markWordleGuess";
 test("returns expected wordle mark", () => {
   expect(markwordleguess("WORLD", "WORDS")).toStrictEqual({
     guess: "WORLD",
-    result: [2, 2, 2, 0, 1],
+    result: ["fullMatch", "fullMatch", "fullMatch", "miss", "partial"],
   } as MarkedGuess);
 
   expect(markwordleguess("XXXXX", "WORDS")).toStrictEqual({
     guess: "XXXXX",
-    result: [0, 0, 0, 0, 0],
+    result: ["miss", "miss", "miss", "miss", "miss"],
   } as MarkedGuess);
 
-  const expectedResult: Mark[] = [2, 2, 2, 2, 2];
+  const expectedResult: Mark[] = ["fullMatch", "fullMatch", "fullMatch", "fullMatch", "fullMatch"];
   expect(markwordleguess("WORDS", "WORDS")).toStrictEqual({
     guess: "WORDS",
     result: expectedResult,
@@ -22,16 +22,16 @@ test("returns expected wordle mark", () => {
 test("can handle double letters", () => {
   expect(markwordleguess("LULLS", "LEVEL")).toStrictEqual({
     guess: "LULLS",
-    result: [2, 0, 1, 0, 0],
+    result: ["fullMatch", "miss", "partial", "miss", "miss"],
   } as MarkedGuess);
 
   expect(markwordleguess("LLLLL", "LEVEL")).toStrictEqual({
     guess: "LLLLL",
-    result: [2, 1, 0, 0, 0],
+    result: ["fullMatch", "partial", "miss", "miss", "miss"],
   } as MarkedGuess);
 
   expect(markwordleguess("APPLE", "PARTY")).toStrictEqual({
     guess: "APPLE",
-    result: [1, 1, 0, 0, 0],
+    result: ["partial", "partial", "miss", "miss", "miss"],
   } as MarkedGuess);
 });
