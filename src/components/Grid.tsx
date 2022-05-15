@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { GuessRow } from "./GuessRow";
 import { markWordleGuess, Mark } from "../utils/markWordleGuess";
 import { MarkedGuessRow } from "./MarkedGuessRow";
+import { useState } from "react";
 
 export function Grid(): JSX.Element {
   const [guesses, setGuesses] = useState<string[]>(["", "", "", "", ""]);
@@ -17,13 +17,7 @@ export function Grid(): JSX.Element {
 
   const wordOfTheDay = "LEVEL";
 
-  useEffect(() => {
-    console.log(`Now on guess ${guessCounter}`);
-    console.log(haveGuessesSubmitted);
-    console.log(markedResults);
-  }, [guessCounter]);
-
-  function onEnterPress(event: React.KeyboardEvent<HTMLInputElement>) {
+   function onEnterPress(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.code === "Enter") {
       setHaveGuessesSubmitted((currentHaveGuessesSubmitted) => {
         currentHaveGuessesSubmitted[guessCounter - 1] = true;

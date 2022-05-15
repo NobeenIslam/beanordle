@@ -7,7 +7,7 @@ test("returns expected wordle mark", () => {
     "fullMatch",
     "miss",
     "partial",
-  ]),
+  ]);
     expect(markWordleGuess("XXXXX", "WORDS")).toStrictEqual([
       "miss",
       "miss",
