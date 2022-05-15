@@ -17,7 +17,7 @@ export function Grid(): JSX.Element {
 
   const wordOfTheDay = "LEVEL";
 
-   function onEnterPress(event: React.KeyboardEvent<HTMLInputElement>) {
+  function onEnterPress(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.code === "Enter") {
       setHaveGuessesSubmitted((currentHaveGuessesSubmitted) => {
         currentHaveGuessesSubmitted[guessCounter - 1] = true;

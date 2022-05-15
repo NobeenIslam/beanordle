@@ -8,13 +8,13 @@ test("returns expected wordle mark", () => {
     "miss",
     "partial",
   ]);
-    expect(markWordleGuess("XXXXX", "WORDS")).toStrictEqual([
-      "miss",
-      "miss",
-      "miss",
-      "miss",
-      "miss",
-    ]);
+  expect(markWordleGuess("XXXXX", "WORDS")).toStrictEqual([
+    "miss",
+    "miss",
+    "miss",
+    "miss",
+    "miss",
+  ]);
 
   const expectedResult: Mark[] = [
     "fullMatch",
