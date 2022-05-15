@@ -25,7 +25,8 @@ export function Grid(): JSX.Element {
           return newHaveGuessesSubmitted
       })
       setGuessCounter((currentGuessCounter)=> currentGuessCounter + 1);
-      setMarkedResults((prevMarkedResults)=>[...prevMarkedResults,markWordleGuess(guesses[guessCounter-1],wordOfTheDay)])
+      const currentMarkedResult = markWordleGuess(guesses[guessCounter-1],wordOfTheDay)
+      setMarkedResults((currentMarkedResults)=>[...currentMarkedResults,currentMarkedResult])
 
     }
   }
