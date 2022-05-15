@@ -1,7 +1,7 @@
-interface GuessProps {
+interface GuessRowProps {
   guess: string;
 }
-export function Guess({ guess }: GuessProps): JSX.Element {
+export function GuessRow({ guess }: GuessRowProps): JSX.Element {
   return (
     <>
       <div className="grid-container">

@@ -1,37 +1,53 @@
-import markwordleguess, { Mark } from "./markWordleGuess";
-import { MarkedGuess } from "./markWordleGuess";
+import { markWordleGuess, Mark } from "./markWordleGuess";
 
 test("returns expected wordle mark", () => {
-  expect(markwordleguess("WORLD", "WORDS")).toStrictEqual({
-    guess: "WORLD",
-    result: [2, 2, 2, 0, 1],
-  } as MarkedGuess);
+  expect(markWordleGuess("WORLD", "WORDS")).toStrictEqual([
+    "fullMatch",
+    "fullMatch",
+    "fullMatch",
+    "miss",
+    "partial",
+  ]);
+  expect(markWordleGuess("XXXXX", "WORDS")).toStrictEqual([
+    "miss",
+    "miss",
+    "miss",
+    "miss",
+    "miss",
+  ]);
 
-  expect(markwordleguess("XXXXX", "WORDS")).toStrictEqual({
-    guess: "XXXXX",
-    result: [0, 0, 0, 0, 0],
-  } as MarkedGuess);
-
-  const expectedResult: Mark[] = [2, 2, 2, 2, 2];
-  expect(markwordleguess("WORDS", "WORDS")).toStrictEqual({
-    guess: "WORDS",
-    result: expectedResult,
-  } as MarkedGuess);
+  const expectedResult: Mark[] = [
+    "fullMatch",
+    "fullMatch",
+    "fullMatch",
+    "fullMatch",
+    "fullMatch",
+  ];
+  expect(markWordleGuess("WORDS", "WORDS")).toStrictEqual(expectedResult);
 });
 
 test("can handle double letters", () => {
-  expect(markwordleguess("LULLS", "LEVEL")).toStrictEqual({
-    guess: "LULLS",
-    result: [2, 0, 1, 0, 0],
-  } as MarkedGuess);
+  expect(markWordleGuess("LULLS", "LEVEL")).toStrictEqual([
+    "fullMatch",
+    "miss",
+    "partial",
+    "miss",
+    "miss",
+  ]);
 
-  expect(markwordleguess("LLLLL", "LEVEL")).toStrictEqual({
-    guess: "LLLLL",
-    result: [2, 1, 0, 0, 0],
-  } as MarkedGuess);
+  expect(markWordleGuess("LLLLL", "LEVEL")).toStrictEqual([
+    "fullMatch",
+    "partial",
+    "miss",
+    "miss",
+    "miss",
+  ]);
 
-  expect(markwordleguess("APPLE", "PARTY")).toStrictEqual({
-    guess: "APPLE",
-    result: [1, 1, 0, 0, 0],
-  } as MarkedGuess);
+  expect(markWordleGuess("APPLE", "PARTY")).toStrictEqual([
+    "partial",
+    "partial",
+    "miss",
+    "miss",
+    "miss",
+  ]);
 });

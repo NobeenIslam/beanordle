@@ -1,3 +1,28 @@
+.header{
+  text-align: center;
+}
+
+.gridSection{
+  text-align: center;
+}
+
+.guessInput{
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.miss{
+  background-color: grey;
+}
+
+.partial{
+  background-color: orange;
+}
+
+.fullMatch{
+  background-color: green ;
+}
+
 .grid-container {
     display: grid;
     border: 1px black;
@@ -9,12 +34,12 @@
     
   }
   .grid-container > div {
-    background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.8);
     font-size: 30px;
     padding: 1rem;
     text-align: center;
-    display:grid;
+    display:grid; 
+    /* This overrides the red in the pseuodo element */
     place-items: center;
   }
 
@@ -32,7 +57,7 @@
   .grid-container > div > span{
     width:100%;
     grid-area: 1/ 1 /2 /2 ;
-    /* So container and item occupy same space in the "new grid"*/
+    /* So container and text item occupy same space in the "new grid"*/
 
 
   }
