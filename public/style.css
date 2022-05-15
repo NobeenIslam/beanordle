@@ -34,12 +34,12 @@
     
   }
   .grid-container > div {
-    background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.8);
     font-size: 30px;
     padding: 1rem;
     text-align: center;
-    display:grid;
+    display:grid; 
+    /* This overrides the red in the pseuodo element */
     place-items: center;
   }
 
