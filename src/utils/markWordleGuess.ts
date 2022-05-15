@@ -1,13 +1,8 @@
 import { getLetterOccurence } from "./getLetterOccurence";
 
-
-
 export type Mark = "miss" | "partial" | "fullMatch";
 
-export function markWordleGuess(
-  guess: string,
-  hiddenTarget: string
-): Mark[] {
+export function markWordleGuess(guess: string, hiddenTarget: string): Mark[] {
   const result: Mark[] = ["miss", "miss", "miss", "miss", "miss"];
 
   for (let index = 0; index < guess.length; index++) {
@@ -26,7 +21,6 @@ export function markWordleGuess(
     }
   }
 
- 
   return result;
 }
 

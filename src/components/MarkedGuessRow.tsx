@@ -2,9 +2,12 @@ import { Mark } from "../utils/markWordleGuess";
 
 interface MarkedGuessRowProps {
   guess: string;
-  markedResult: Mark[]  
+  markedResult: Mark[];
 }
-export function MarkedGuessRow({ guess, markedResult}: MarkedGuessRowProps): JSX.Element {
+export function MarkedGuessRow({
+  guess,
+  markedResult,
+}: MarkedGuessRowProps): JSX.Element {
   return (
     <>
       <div className="grid-container">

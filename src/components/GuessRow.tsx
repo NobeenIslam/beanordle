@@ -1,9 +1,7 @@
-
 interface GuessRowProps {
   guess: string;
-  
 }
-export function GuessRow({ guess}: GuessRowProps): JSX.Element {
+export function GuessRow({ guess }: GuessRowProps): JSX.Element {
   return (
     <>
       <div className="grid-container">
