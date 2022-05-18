@@ -1,5 +1,6 @@
-# Simplified CRA starter
+# Linked to deployed
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+My deployed beanordle: https://beanordle.netlify.app/
+Project Documentation: https://humorous-creek-185.notion.site/Beanordle-b7b8ef969b9a49cd9ab4e6a5369d42d8
 
-> This is part of Academy's technical curriculum for **The Mark**. All parts of that curriculum, including this project, are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
+To run locally: yarn start
